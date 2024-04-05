@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+function echoBoldRed () { echo -e "\033[1;31m$1\033[0m"; }
+
+echoBoldRed "In Hooked mkfs.ext4"
+
+repartTmpDir=${@: -1}
+
+echoBoldRed "Temporary OS Tree created by systemd-repart is at $repartTmpDir"
+
+echoBoldRed "Current Timestamps of temporary OS Tree created by systemd-repart"
+
+stat $repartTmpDir/somedir
+stat $repartTmpDir/somedir/somefile
